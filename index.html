@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="refresh" content="0;URL=https://linkedin.com/in/sachinjain-utdallas/">
-<script>window.location.replace("https://linkedin.com/in/sachinjain-utdallas/");</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'GA_MEASUREMENT_ID');
+
+// Track page view and redirect
+gtag('event', 'page_view');
+
+// Fallback with sendBeacon
+if (navigator.sendBeacon) {
+  const data = new URLSearchParams({
+    v: '1',
+    tid: 'GA_MEASUREMENT_ID',
+    cid: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
+    t: 'pageview',
+    dl: location.href,
+    dt: document.title
+  });
+  navigator.sendBeacon('https://www.google-analytics.com/collect', data);
+}
+
+// Redirect after minimal delay to ensure GA fires
+setTimeout(() => {
+  window.location.replace("https://linkedin.com/in/sachinjain-utdallas/");
+}, 75);
+</script>
+<meta content="1;URL=https://linkedin.com/in/sachinjain-utdallas/" http-equiv="refresh"/>
 </head>
-<body>
-</body>
+<body></body>
 </html>
