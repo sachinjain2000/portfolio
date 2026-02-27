@@ -1,36 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'GA_MEASUREMENT_ID');
-
-// Track page view and redirect
-gtag('event', 'page_view');
-
-// Fallback with sendBeacon
-if (navigator.sendBeacon) {
-  const data = new URLSearchParams({
-    v: '1',
-    tid: 'GA_MEASUREMENT_ID',
-    cid: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
-    t: 'pageview',
-    dl: location.href,
-    dt: document.title
-  });
-  navigator.sendBeacon('https://www.google-analytics.com/collect', data);
-}
-
-// Redirect after minimal delay to ensure GA fires
-setTimeout(() => {
-  window.location.replace("https://sachinjain.xyz");
-}, 75);
-</script>
-<meta content="1;URL=https://sachinjain.xyz" http-equiv="refresh"/>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0;URL=https://sachinjain.xyz" />
+  <title>Redirecting...</title>
+  <script>window.location.replace("https://sachinjain.xyz");</script>
+  <link rel="canonical" href="https://sachinjain.xyz" />
 </head>
-<body></body>
+<body>
+  <p>Redirecting to <a href="https://sachinjain.xyz">sachinjain.xyz</a>&#8230;</p>
+</body>
 </html>
